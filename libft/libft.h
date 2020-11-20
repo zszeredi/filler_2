@@ -6,7 +6,7 @@
 /*   By: zszeredi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/07 12:01:11 by zszeredi          #+#    #+#             */
-/*   Updated: 2020/09/13 11:05:48 by zszeredi         ###   ########.fr       */
+/*   Updated: 2020/11/20 17:26:57 by zszeredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,15 @@
 # include <stdarg.h>
 # include <limits.h>
 
-# define	BUFF_SIZE 100
+# define BUFF_SIZE 100
 
 typedef struct		s_gnl
 {
 	char			buff[BUFF_SIZE + 1];
-	char				*rest[FOPEN_MAX];
+	char			*rest[FOPEN_MAX];
 	int				ret;
-	char				*ptr;
-}			t_gnl;
+	char			*ptr;
+}					t_gnl;
 
 typedef struct		s_list
 {
@@ -45,10 +45,10 @@ typedef	struct		s_itoa
 	int				cap;
 }					t_itoa;
 
-int				get_next_line(const int fd, char **line);
+int					get_next_line(const int fd, char **line);
 size_t				ft_pos_i(char *str, int c);
 void				*ft_delete_double_array(char **str, int n);
-void				*ft_memset(void *b, int c, size_t len);
+char				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
 void				*ft_memcpy(void *dst, const void *src, size_t n);
 void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
