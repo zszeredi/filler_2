@@ -12,13 +12,12 @@
 
 #ifndef FILLER_H
 # define FILLER_H
-# include <stdlib.h>
 # include "libft/libft.h"
 # include <stdint.h>
+# include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
 # include <stdio.h>
-# include <errno.h>
 
 typedef struct	s_coords
 {

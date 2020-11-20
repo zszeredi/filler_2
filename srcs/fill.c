@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "filler.h"
+#include "../filler.h"
 
 static t_filler			*insert(t_filler *ptr, char c, t_coords coord)
 {

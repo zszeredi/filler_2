@@ -12,6 +12,7 @@
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# include <stdio.h>
 # include <stdint.h>
 # include <string.h>
 # include <stdlib.h>
@@ -47,8 +48,8 @@ typedef	struct		s_itoa
 
 int					get_next_line(const int fd, char **line);
 size_t				ft_pos_i(char *str, int c);
-void				*ft_delete_double_array(char **str, int n);
-char				*ft_memset(void *b, int c, size_t len);
+char				*ft_delete_double_array(char **str, int n);
+void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
 void				*ft_memcpy(void *dst, const void *src, size_t n);
 void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
