@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "filler.h"
+#include "../filler.h"
 
 t_tetra					*ext_coords(t_tetra *tet, int c)
 {

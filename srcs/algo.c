@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "filler.h"
+#include "../filler.h"
 
 t_filler		*place(t_filler *ptr, t_tetra *tet, int x, int n)
 {
