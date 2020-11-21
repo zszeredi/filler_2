@@ -27,6 +27,10 @@ t_filler		*place(t_filler *ptr, t_tetra *tet, int x, int n)
 			ptr->coo = coord_copy(ptr->coo, x - tet->del_col_s,
 					n - tet->del_row_s);
 		ptr->table[a][b] = ptr->me;
+		if (a < 2)
+			ptr->wall = 1;
+		if (a > ptr->lines - 2)
+			ptr->wall = 2;
 		i++;
 	}
 	return (ptr);
@@ -79,7 +83,7 @@ t_filler		*algo(t_filler *ptr, t_tetra *tet)
 	push_ud(ptr, tet, 0);
 	if (compare(ptr, tet, tet->push_x, tet->push_n) < 1)
 	{
-		if (ptr->q == 4)
+		if ((ptr->q == 4 && ptr->wall != 1) || ptr->wall == 2)
 			find_place_up(ptr, tet);
 		else
 			find_place_down(ptr, tet);

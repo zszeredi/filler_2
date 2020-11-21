@@ -26,6 +26,7 @@ static t_filler		*set(t_filler *ptr)
 	ptr->q = 0;
 	ptr->counter = -1;
 	ptr->end = 0;
+	ptr->wall = 0;
 	return (ptr);
 }
 

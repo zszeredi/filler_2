@@ -13,11 +13,6 @@
 #ifndef FILLER_H
 # define FILLER_H
 # include "libft/libft.h"
-# include <stdint.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <string.h>
-# include <stdio.h>
 
 typedef struct	s_coords
 {
@@ -32,6 +27,7 @@ typedef	struct	s_filler
 	int			q;
 	int			end;
 	int			counter;
+	int			wall;
 	char		me;
 	char		opp;
 	char		*line;
