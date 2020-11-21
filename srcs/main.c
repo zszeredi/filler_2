@@ -36,13 +36,12 @@ int	main(void) // TOO LONG
 			get_next_line(0, &ptr->line);
 		}
 		fill_up(ptr);
-		tetro_read(ptr, ptr->line); // try with ft_printf
+		tetro_read(ptr, ptr->line);
 		ft_putnbr(ptr->coo.n);
 		ft_putchar(' ');
 		ft_putnbr(ptr->coo.x);
 		ft_putchar('\n');
 	}
-	ft_delete_double_array(ptr->table, ptr->lines);
-	free(ptr);
+	delete(ptr, ptr->table, ptr->lines);
 	return (0);
 }

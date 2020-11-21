@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	*ft_delete_double_array(char **str, int n)
+void	ft_delete_double_array(char **str, int n)
 {
 	int i;
 
@@ -23,5 +23,5 @@ char	*ft_delete_double_array(char **str, int n)
 		i++;
 	}
 	free(str);
-	return (NULL);
+	//return (NULL);
 }

@@ -9,7 +9,7 @@ SRCS = $(addprefix $(SRC_DIR), $(SRC))
 OBJ = $(SRCS:.c=.o)
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address
 
 all: libft $(NAME)
 

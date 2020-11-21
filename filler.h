@@ -63,6 +63,8 @@ typedef	struct	s_tetra
 	t_coords	*cordis;
 }				t_tetra;
 
+void			get_size(int i, int j, char *line);
+void			*delete(void *ptr, char **str, int n);
 char			*delete_double_array(char **str, int n);
 t_coords		coord_copy(t_coords coo, int i, int j);
 t_filler		*place(t_filler *ptr, t_tetra *tet, int x, int n);

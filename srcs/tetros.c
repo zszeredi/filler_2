@@ -12,7 +12,7 @@
 
 #include "../filler.h"
 
-t_tetra					*ext_coords(t_tetra *tet, int c)
+t_tetra					*ext_coords(t_tetra *tet, int c) // copy to utils
 {
 	int i;
 
@@ -136,9 +136,8 @@ t_filler				*tetro_read(t_filler *ptr, char *line)
 	}
 	insert_tetra(tet, ptr);
 	algo(ptr, tet);
-	ft_delete_double_array(tet->tetra, tet->t_lin);
 	free(tet->cordis);
-	free(tet);
+	delete(tet, tet->tetra, tet->t_lin);
 	free(line);
 	return (ptr);
 }

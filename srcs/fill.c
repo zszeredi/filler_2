@@ -27,7 +27,24 @@ static t_filler			*bridge(t_filler *ptr, int x, char c)
 	return (ptr);
 }
 
-static t_filler			*read_chara(t_filler *ptr, char *line, int n)//TOO LONG
+static t_filler			*first(t_filler *ptr, int counter)
+{
+
+	if (counter == -1)
+	{
+		ptr->me_s = coord_copy(ptr->me_s, ptr->coo.x, ptr->coo.n);
+		ptr->counter = 0;
+	}
+	if (counter == 0)
+	{
+		ptr->me_line = ptr->coo.n;
+		ptr->up = coord_copy(ptr->up, ptr->coo.x, ptr->coo.n);
+		ptr->counter = 1;
+	}
+	return (ptr);
+}
+
+static t_filler			*read_chara(t_filler *ptr, char *line, int n)
 {
 	int	x;
 
@@ -39,20 +56,10 @@ static t_filler			*read_chara(t_filler *ptr, char *line, int n)//TOO LONG
 		{
 			bridge(ptr, x, ptr->me);
 			if (ptr->counter == -1)
-			{
-				ptr->me_s.x = ptr->coo.x;
-				ptr->me_s.n = ptr->coo.n;
-				ptr->counter = 0;
-			}
+				first(ptr, ptr->counter);
 			if (ptr->counter == 0)
-			{
-				ptr->me_line = ptr->coo.n;
-				ptr->up.x = ptr->coo.x;
-				ptr->up.n = ptr->coo.n;
-				ptr->counter = 1;
-			}
-			ptr->down.x = ptr->coo.x;
-			ptr->down.n = ptr->coo.n;
+				first(ptr, ptr->counter);	
+			ptr->down = coord_copy(ptr->down, ptr->coo.x, ptr->coo.n);
 		}
 		else if (line[x] == ptr->opp)
 		{

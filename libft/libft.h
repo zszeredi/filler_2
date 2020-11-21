@@ -48,7 +48,7 @@ typedef	struct		s_itoa
 
 int					get_next_line(const int fd, char **line);
 size_t				ft_pos_i(char *str, int c);
-char				*ft_delete_double_array(char **str, int n);
+void				ft_delete_double_array(char **str, int n);
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
 void				*ft_memcpy(void *dst, const void *src, size_t n);

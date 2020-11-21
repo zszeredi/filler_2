@@ -12,6 +12,13 @@
 
 #include "../filler.h"
 
+void		*delete(void *ptr, char **str, int n)
+{
+	ft_delete_double_array(str, n);
+	free(ptr);
+	return (NULL);
+}
+
 t_coords	coord_copy(t_coords coo, int j, int i)
 {
 	coo.x = j;

@@ -83,11 +83,29 @@ t_tetra			*push_calc(t_tetra *tet, int index, int i, int j)
 	return (tet);
 }
 
+
+int			solver(t_filler *ptr, t_tetra *tet, int i, int j)
+{
+	int index;
+
+	index = 0;
+	while (index < tet->num_stars)
+	{
+		push_calc(tet, index, i, j);
+		if (compare(ptr, tet, tet->push_x, tet->push_n) == 1)
+		{
+			place(ptr, tet, tet->push_x, tet->push_n);
+			return (1);
+		}
+		index++;
+	}
+	return (0);
+}
+
 int				find_place_down(t_filler *ptr, t_tetra *tet)
 {
 	int i;
 	int j;
-	int index;
 
 	i = ptr->down.n;
 	j = ptr->down.x;
@@ -97,17 +115,8 @@ int				find_place_down(t_filler *ptr, t_tetra *tet)
 		{
 			if (ptr->table[i][j] == ptr->me)
 			{
-				index = 0;
-				while (index < tet->num_stars)
-				{
-					push_calc(tet, index, i, j); // SEPERATE FUNC
-					if (compare(ptr, tet, tet->push_x, tet->push_n) == 1)
-					{
-						place(ptr, tet, tet->push_x, tet->push_n);
-						return (1);
-					}
-					index++;
-				}
+				if (solver(ptr, tet, i, j) == 1)
+					return (1);
 			}
 			j--;
 		}
@@ -123,7 +132,6 @@ int				find_place_up(t_filler *ptr, t_tetra *tet)
 {
 	int i;
 	int j;
-	int index;
 
 	i = ptr->up.n;
 	j = ptr->up.x;
@@ -133,17 +141,8 @@ int				find_place_up(t_filler *ptr, t_tetra *tet)
 		{
 			if (ptr->table[i][j] == ptr->me)
 			{
-				index = 0;
-				while (index < tet->num_stars)
-				{
-					push_calc(tet, index, i, j);
-					if (compare(ptr, tet, tet->push_x, tet->push_n) == 1)
-					{
-						place(ptr, tet, tet->push_x, tet->push_n);
-						return (1);
-					}
-					index++;
-				}
+				if (solver(ptr, tet, i, j) == 1)
+					return (1);
 			}
 			j++;
 		}
