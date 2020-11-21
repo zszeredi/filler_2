@@ -6,13 +6,13 @@
 /*   By: zszeredi <zszeredi@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 11:23:13 by zszeredi          #+#    #+#             */
-/*   Updated: 2020/11/21 16:37:35 by zszeredi         ###   ########.fr       */
+/*   Updated: 2020/11/21 17:16:45 by zszeredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../filler.h"
 
-static void		printing(t_filler *ptr)
+static void			printing(t_filler *ptr)
 {
 	ft_putnbr(ptr->coo.n);
 	ft_putchar(' ');
@@ -29,7 +29,7 @@ static t_filler		*set(t_filler *ptr)
 	return (ptr);
 }
 
-int			main(void)
+int					main(void)
 {
 	t_filler	*ptr;
 

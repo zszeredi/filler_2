@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi_dot.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zszeredi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: zszeredi <zszeredi@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/20 15:33:00 by zszeredi          #+#    #+#             */
-/*   Updated: 2020/09/17 13:04:54 by zszeredi         ###   ########.fr       */
+/*   Created: 2020/11/21 17:17:49 by zszeredi          #+#    #+#             */
+/*   Updated: 2020/11/21 17:17:55 by zszeredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 int	ft_atoi_dot(const char *str)
 {

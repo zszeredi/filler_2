@@ -6,13 +6,13 @@
 /*   By: zszeredi <zszeredi@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/21 16:14:33 by zszeredi          #+#    #+#             */
-/*   Updated: 2020/11/21 16:14:38 by zszeredi         ###   ########.fr       */
+/*   Updated: 2020/11/21 17:16:28 by zszeredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../filler.h"
 
-static	t_tetra		*push_calc(t_tetra *tet, int index, int i, int j)
+static	t_tetra	*push_calc(t_tetra *tet, int index, int i, int j)
 {
 	tet->push_x = j - tet->cordis[index].x;
 	tet->push_n = i - tet->cordis[index].n;
@@ -37,7 +37,7 @@ static	int		solver(t_filler *ptr, t_tetra *tet, int i, int j)
 	return (0);
 }
 
-int			find_place_down(t_filler *ptr, t_tetra *tet)
+int				find_place_down(t_filler *ptr, t_tetra *tet)
 {
 	int i;
 	int j;
@@ -63,7 +63,7 @@ int			find_place_down(t_filler *ptr, t_tetra *tet)
 	return (-1);
 }
 
-int			find_place_up(t_filler *ptr, t_tetra *tet)
+int				find_place_up(t_filler *ptr, t_tetra *tet)
 {
 	int i;
 	int j;
