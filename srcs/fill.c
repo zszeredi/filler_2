@@ -6,7 +6,7 @@
 /*   By: zszeredi <zszeredi@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 11:37:44 by zszeredi          #+#    #+#             */
-/*   Updated: 2020/11/20 11:41:53 by zszeredi         ###   ########.fr       */
+/*   Updated: 2020/11/21 16:01:36 by zszeredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ static t_filler			*bridge(t_filler *ptr, int x, char c)
 
 static t_filler			*first(t_filler *ptr, int counter)
 {
-
 	if (counter == -1)
 	{
 		ptr->me_s = coord_copy(ptr->me_s, ptr->coo.x, ptr->coo.n);
@@ -58,7 +57,7 @@ static t_filler			*read_chara(t_filler *ptr, char *line, int n)
 			if (ptr->counter == -1)
 				first(ptr, ptr->counter);
 			if (ptr->counter == 0)
-				first(ptr, ptr->counter);	
+				first(ptr, ptr->counter);
 			ptr->down = coord_copy(ptr->down, ptr->coo.x, ptr->coo.n);
 		}
 		else if (line[x] == ptr->opp)

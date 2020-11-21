@@ -6,29 +6,11 @@
 /*   By: zszeredi <zszeredi@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 11:42:13 by zszeredi          #+#    #+#             */
-/*   Updated: 2020/11/20 11:47:16 by zszeredi         ###   ########.fr       */
+/*   Updated: 2020/11/21 16:31:04 by zszeredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../filler.h"
-
-t_tetra					*ext_coords(t_tetra *tet, int c) // copy to utils
-{
-	int i;
-
-	i = 0;
-	while (i < tet->index)
-	{
-		if ((tet->cordis[i].x < tet->l.x && c == 0) ||
-				(tet->cordis[i].x <= tet->l.x && c == 1))
-			tet->l = coord_copy(tet->l, tet->cordis[i].x, tet->cordis[i].n);
-		if ((tet->cordis[i].x >= tet->r.x && c == 0) ||
-				(tet->cordis[i].x >= tet->l.x && c == 1))
-			tet->r = coord_copy(tet->r, tet->cordis[i].x, tet->cordis[i].n);
-		i++;
-	}
-	return (tet);
-}
 
 static t_tetra			*deduct(t_tetra *tet)
 {

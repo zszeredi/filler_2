@@ -6,7 +6,7 @@
 /*   By: zszeredi <zszeredi@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 11:27:08 by zszeredi          #+#    #+#             */
-/*   Updated: 2020/11/20 11:30:05 by zszeredi         ###   ########.fr       */
+/*   Updated: 2020/11/21 16:31:58 by zszeredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,24 @@ t_coords	coord_copy(t_coords coo, int j, int i)
 	coo.x = j;
 	coo.n = i;
 	return (coo);
+}
+
+t_tetra		*ext_coords(t_tetra *tet, int c)
+{
+	int i;
+
+	i = 0;
+	while (i < tet->index)
+	{
+		if ((tet->cordis[i].x < tet->l.x && c == 0) ||
+				(tet->cordis[i].x <= tet->l.x && c == 1))
+			tet->l = coord_copy(tet->l, tet->cordis[i].x, tet->cordis[i].n);
+		if ((tet->cordis[i].x >= tet->r.x && c == 0) ||
+				(tet->cordis[i].x >= tet->l.x && c == 1))
+			tet->r = coord_copy(tet->r, tet->cordis[i].x, tet->cordis[i].n);
+		i++;
+	}
+	return (tet);
 }
 
 int			quadrant(t_filler *ptr)
