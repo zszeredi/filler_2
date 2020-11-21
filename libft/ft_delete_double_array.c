@@ -6,7 +6,7 @@
 /*   By: zszeredi <zszeredi@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 17:22:32 by zszeredi          #+#    #+#             */
-/*   Updated: 2020/11/20 17:25:02 by zszeredi         ###   ########.fr       */
+/*   Updated: 2020/11/21 15:59:41 by zszeredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,4 @@ void	ft_delete_double_array(char **str, int n)
 		i++;
 	}
 	free(str);
-	//return (NULL);
 }

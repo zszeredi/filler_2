@@ -6,7 +6,7 @@
 /*   By: zszeredi <zszeredi@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 17:47:13 by zszeredi          #+#    #+#             */
-/*   Updated: 2020/11/20 17:50:25 by zszeredi         ###   ########.fr       */
+/*   Updated: 2020/11/21 16:20:45 by zszeredi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,16 +63,15 @@ typedef	struct	s_tetra
 	t_coords	*cordis;
 }				t_tetra;
 
-void			get_size(int i, int j, char *line);
-void			*delete(void *ptr, char **str, int n);
-char			*delete_double_array(char **str, int n);
-t_coords		coord_copy(t_coords coo, int i, int j);
-t_filler		*place(t_filler *ptr, t_tetra *tet, int x, int n);
-int				compare(t_filler *ptr, t_tetra *tet, int x, int n);
-t_filler		*algo(t_filler *ptr, t_tetra *tet);
-t_tetra			*cut_off(t_tetra *tet);
+void			*delete_rest(void *ptr, char **str, int n);
 t_coords		coord_copy(t_coords coo, int i, int j);
 t_tetra			*ext_coords(t_tetra *tet, int n);
+t_filler		*place(t_filler *ptr, t_tetra *tet, int x, int n);
+int				compare(t_filler *ptr, t_tetra *tet, int x, int n);
+int				find_place_down(t_filler *ptr, t_tetra *tet);
+int				find_place_up(t_filler *ptr, t_tetra *tet);
+t_filler		*algo(t_filler *ptr, t_tetra *tet);
+t_tetra			*cut_off(t_tetra *tet);
 t_filler		*tetro_read(t_filler *ptr, char *line);
 int				quadrant(t_filler *ptr);
 t_filler		*fill_up(t_filler *ptr);
