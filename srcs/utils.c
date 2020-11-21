@@ -12,7 +12,7 @@
 
 #include "../filler.h"
 
-void		*delete(void *ptr, char **str, int n)
+void		*delete_rest(void *ptr, char **str, int n)
 {
 	ft_delete_double_array(str, n);
 	free(ptr);

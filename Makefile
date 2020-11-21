@@ -2,7 +2,7 @@ NAME = zszeredi.filler
 
 SRC_DIR = srcs/
 
-SRC = main.c table.c fill.c tetros.c cut.c algo.c utils.c
+SRC = main.c table.c fill.c tetros.c cut.c algo.c algo2.c utils.c
 
 SRCS = $(addprefix $(SRC_DIR), $(SRC))
 

@@ -36,7 +36,6 @@ static t_filler			*first(t_filler *ptr, int counter)
 	}
 	if (counter == 0)
 	{
-		ptr->me_line = ptr->coo.n;
 		ptr->up = coord_copy(ptr->up, ptr->coo.x, ptr->coo.n);
 		ptr->counter = 1;
 	}
@@ -61,10 +60,7 @@ static t_filler			*read_chara(t_filler *ptr, char *line, int n)
 			ptr->down = coord_copy(ptr->down, ptr->coo.x, ptr->coo.n);
 		}
 		else if (line[x] == ptr->opp)
-		{
-			ptr->opp_line = ptr->coo.n;
 			bridge(ptr, x, ptr->opp);
-		}
 		x++;
 	}
 	return (ptr);

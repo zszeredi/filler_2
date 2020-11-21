@@ -12,12 +12,21 @@
 
 #include "../filler.h"
 
-static void	printing(t_filler *ptr)
+static void		printing(t_filler *ptr)
 {
 	ft_putnbr(ptr->coo.n);
 	ft_putchar(' ');
-	ft_putnbr(ptr->coo.nx);
+	ft_putnbr(ptr->coo.x);
 	ft_putchar(' ');
+	ft_putchar('\n');
+}
+
+static t_filler		*set(t_filler *ptr)
+{
+	ptr->q = 0;
+	ptr->counter = -1;
+	ptr->end = 0;
+	return (ptr);
 }
 
 int			main(void)
@@ -32,10 +41,7 @@ int			main(void)
 	if (get_next_line(0, &ptr->line) > 0)
 		create_table(ptr, ptr->line);
 	free(ptr->line);
-	ptr->q = 0;
-	ptr->counter = -1;
-	ptr->intersection = 0;
-	ptr->end = 0;
+	set(ptr);
 	while (get_next_line(0, &ptr->line) > 0 && ptr->end == 0)
 	{
 		if (ft_strstr(ptr->line, "Plateau") != NULL)
@@ -47,6 +53,6 @@ int			main(void)
 		tetro_read(ptr, ptr->line);
 		printing(ptr);
 	}
-	delete(ptr, ptr->table, ptr->lines);
+	delete_rest(ptr, ptr->table, ptr->lines);
 	return (0);
 }

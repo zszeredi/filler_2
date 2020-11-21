@@ -26,8 +26,6 @@ t_filler		*place(t_filler *ptr, t_tetra *tet, int x, int n)
 		if (i == 0)
 			ptr->coo = coord_copy(ptr->coo, x - tet->del_col_s,
 					n - tet->del_row_s);
-		if (a == ptr->opp_line || b <= 2)
-			ptr->intersection = 1;
 		ptr->table[a][b] = ptr->me;
 		i++;
 	}

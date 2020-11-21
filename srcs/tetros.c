@@ -43,8 +43,8 @@ static t_tetra			*save_cordis(t_filler *ptr, t_tetra *tet, int i)
 
 	while (i <= tet->t_lin)
 	{
-		j = 0;
-		while (j <= tet->t_col)
+		j = -1;
+		while (++j <= tet->t_col)
 		{
 			if (j == 0 && i == 0)
 				ptr->coo = coord_copy(ptr->coo, j, i);
@@ -60,7 +60,6 @@ static t_tetra			*save_cordis(t_filler *ptr, t_tetra *tet, int i)
 					deduct(tet);
 				return (tet);
 			}
-			j++;
 		}
 		i++;
 	}
@@ -119,7 +118,7 @@ t_filler				*tetro_read(t_filler *ptr, char *line)
 	insert_tetra(tet, ptr);
 	algo(ptr, tet);
 	free(tet->cordis);
-	delete(tet, tet->tetra, tet->t_lin);
+	delete_rest(tet, tet->tetra, tet->t_lin);
 	free(line);
 	return (ptr);
 }

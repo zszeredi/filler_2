@@ -32,9 +32,6 @@ typedef	struct	s_filler
 	int			q;
 	int			end;
 	int			counter;
-	int			me_line;
-	int			opp_line;
-	int			intersection;
 	char		me;
 	char		opp;
 	char		*line;
@@ -58,8 +55,6 @@ typedef	struct	s_tetra
 	char		**tetra;
 	t_coords	l;
 	t_coords	r;
-	t_coords	u;
-	t_coords	d;
 	t_coords	*cordis;
 }				t_tetra;
 
